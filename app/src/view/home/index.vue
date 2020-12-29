@@ -1,9 +1,12 @@
 <template>
     <div class="home">
-        <div class="home_left-aside"></div>
+        <div class="home_left-aside">
+            <button @click="goRouter">ThreeJS版本</button>
+        </div>
         <div class="home_main">
-            <canvas ref="paintingArea" class="home_paintArea">
-            </canvas>
+<!--            <canvas ref="paintingArea" class="home_paintArea">-->
+<!--            </canvas>-->
+            <router-view></router-view>
         </div>
         <div class="home_right-aside"></div>
     </div>
@@ -25,6 +28,11 @@
                 this.gl.clear(this.gl.COLOR_BUFFER_BIT)
             }
 
+        },
+        methods:{
+            goRouter(){
+                this.$router.push({name:'threeJs实现'})
+            }
         }
     }
 </script>
